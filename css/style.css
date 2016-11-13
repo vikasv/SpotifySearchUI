@@ -1,0 +1,35 @@
+.background-image{
+	background: url('../images/background1.jpg');
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+}
+
+.vertical{
+    top:30%;
+}
+
+.header{
+	color: white
+}
+
+.thumb {
+	margin-top:30px;
+	color:black;
+	opacity:2;
+}
+
+.thumb .img-responsive{
+	height:60%;
+}
+
+.message{
+	color:red;
+}
+
+.displayDiv{
+	background-color :#ffffff;
+	/*opacity:0.9	;*/
+	border-radius:10px;
+}

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title> Spotify App </title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body class="background-image">
+        <!-- <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Artists List</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </nav> -->
+        
+        <div class="searchDiv col-xs-offset-4 col-xs-4 row-xs-offset-12 vertical">
+            <h2 class="header">Artist List</h2>
+            <div class="input-group">
+                <input type="text" id ="inputid" class="form-control" placeholder="Enter Artist name" aria-describedby="basic-addon2" autofocus>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="searchArtist" type="button">Search Artist</button>
+                </span>
+            </div>
+            <h4 class="message"></h4>
+        </div>
+        
+            <div id="added" class="row col-xs-10 col-xs-offset-1"> 
+            </div>
+        
+    </body>
+</html>
