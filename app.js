@@ -3,7 +3,33 @@
   'use strict'
 
   $(document).ready(function(){
-   $("#searchArtist").click(function(){
+
+    // For Enter keyword
+    $("#inputid").keypress(function (e) {
+      if (e.which == 13) {
+           e.preventDefault();
+           var id = $("#inputid").val();
+
+       // validating for empty artist name entries
+         if(id.length === 0){
+            $("#added").empty();
+            $(".searchDiv").addClass("vertical");
+            $("#added").removeClass("displayDiv");
+            $(".message").text("Please enter an valid artist name");
+            return;
+         }
+        
+         var type = "artist";
+         $.ajax({
+            url:"https://api.spotify.com/v1/search?q=" + id + "&type=" + type,
+             datatype: "json",
+             success: artistResults
+         });
+      };
+    });
+
+    // click functionality
+    $("#searchArtist").click(function(){
        var id = $("#inputid").val();
 
        // validating for empty artist name entries
