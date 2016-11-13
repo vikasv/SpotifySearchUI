@@ -1,7 +1,20 @@
-$(document).ready(function(){
-   $("#searchArtist").click(function(){
+(function(){
 
+  'use strict'
+
+  $(document).ready(function(){
+   $("#searchArtist").click(function(){
        var id = $("#inputid").val();
+
+       // validating for empty artist name entries
+       if(id.length === 0){
+          $("#added").empty();
+          $(".searchDiv").addClass("vertical");
+          $("#added").removeClass("displayDiv");
+          $(".message").text("Please enter an valid artist name");
+          return;
+       }
+      
        var type = "artist";
        $.ajax({
           url:"https://api.spotify.com/v1/search?q=" + id + "&type=" + type,
@@ -11,7 +24,6 @@ $(document).ready(function(){
    }); 
    
 });
-
 
 function artistResults(results){ 
   var artists = results.artists;
@@ -35,18 +47,10 @@ function artistResults(results){
   }
 };
 
-
 function displayArtist(item){
      var image = (item.images.length > 0) ? item.images[0].url : "images\\Placeholder_person.png";
      $("#added").append("");
-     $("#added").append("<div class='col-xs-4 center-block thumb'><img src='" + image + "' class='img-responsive img-rounded'/><h4>"+item.name+"</h4></div>");
-     // $("#added").append("<h4>" + item.name + "</h4>");
+     $("#added").append("<div class='col-xs-4 center-block thumb'><img src='" + image + "' class='img-responsive img-rounded'/><h4 class='add-artist'>"+item.name+"</h4></div>");
      $("#added").append("");
-
-     // $("#added").append("<div class='col-xs-2'><div>");
-     // $("#added").append("<img src=" + image + " class='media-object' height='150' width='150'>");
-     // $("#added").append("</div>");
-     // $("#added").append("<div class='media-body'>");
-     // $("#added").append("<h4 class='media-heading'>" + item.name + "</h4>");
-     // $("#added").append("</div></div>");
 }
+})();

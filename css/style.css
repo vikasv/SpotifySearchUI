@@ -21,7 +21,7 @@
 }
 
 .thumb .img-responsive{
-	height:60%;
+	height:40%;
 }
 
 .message{
@@ -29,7 +29,12 @@
 }
 
 .displayDiv{
-	background-color :#ffffff;
-	/*opacity:0.9	;*/
 	border-radius:10px;
+	margin-bottom:10px;
+}
+
+.add-artist{
+	background-color: grey;
+	display: inline-block;
+	color : black;
 }
